@@ -1,6 +1,6 @@
 puts "Generating my user"
 
-u = User.find_or_create_by(username: "objo")
+u = User.find_or_create_by(username: "mleo")
 u.update_attributes({
     first_name: "Mike",
     last_name: "Leo",
@@ -9,7 +9,7 @@ u.update_attributes({
     bio:   "lorem",
     fake:  false,
     })
-    
+
 u.save!
 
 puts "Deleting fake users"

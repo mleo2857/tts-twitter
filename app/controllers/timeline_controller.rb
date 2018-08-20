@@ -1,7 +1,7 @@
 class TimelineController < ApplicationController
    
    def index
-       @user = User.find_by(username: "objo")
+       @user = User.find_by(username: "mleo")
    end
     
 end
