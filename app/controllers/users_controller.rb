@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
-
+    before_action :authenticate_user!
     def index
-        @users = User.where.not(username:"mleo")
+        @users = User.all - [current_user]
     end
     
 end

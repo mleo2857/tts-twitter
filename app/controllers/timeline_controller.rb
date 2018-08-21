@@ -1,7 +1,8 @@
 class TimelineController < ApplicationController
+   before_action :authenticate_user!
    
    def index
-       @user = User.find_by(username: "mleo")
+       @user = current_user
    end
     
 end

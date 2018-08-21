@@ -8,6 +8,9 @@ u.update_attributes({
     state: "Ohio",
     bio:   "lorem",
     fake:  false,
+    email: "mleo2857@gmail.com",
+    password: "123456",
+    password_confirmation: "123456",
     })
 
 u.save!
@@ -26,6 +29,9 @@ puts "Generating fake users\n"
         state: Faker::Address.state_abbr,
         bio: Faker::Lorem.paragraph,
         fake: true,
+        email: Faker::Internet.email,
+        password: "123456",
+        password_confirmation: "123456",
     })
     
 end
