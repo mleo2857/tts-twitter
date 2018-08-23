@@ -1,1 +1,19 @@
 @import "bootstrap";
+
+.message{
+    border-style:solid;
+    border-width:1px;
+    margin-bottom:20px;
+    padding:5px;
+}
+
+.message img {
+    width:50px;
+    float: left;
+    padding: 10px;
+}
+
+.message-date {
+    color: #ADABAA;
+    font-size: .8em;
+}
