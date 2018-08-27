@@ -1,7 +1,7 @@
 
 <div class="row">
     <div class="user_profile col-4">
-    <%= render "shared/avatar", user: user %>
+    <%= render "shared/avatar", user: user, width: "100px" %>
     <br>
     <p>@<%= user.username %></p>
     <p><%= user.full_name %></p>
@@ -22,7 +22,7 @@
         
         <% user.messages.each do |message| %>
         <div class="message">
-            <%= image_tag "user_icon.png"%>
+            <%= render "shared/avatar", user: message.user, width: "50px"  %>
             <p><%= message.body %></p>
             <br>
             <p class="message-date"><%= time_ago_in_words(message.created_at) %></p>
