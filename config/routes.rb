@@ -4,10 +4,12 @@ Rails.application.routes.draw do
   root "timeline#index"
    
   get "/timeline" => "timeline#index", as: :timeline
+
   
   get "/users" => "users#index", as: :users
   
   get "/users/:id" => "users#show", as: :user
   
+  resources :messages
  # root "timeline#index"
 end

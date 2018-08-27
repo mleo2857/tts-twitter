@@ -1,4 +1,5 @@
 
+
 def create_messages(user)
     puts "Creating messages"
    
