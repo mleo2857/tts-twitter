@@ -16,4 +16,10 @@ class UsersController < ApplicationController
         current_user.save
         redirect_to user_path(id: params[:id])
     end
+    
+    def unfollow
+        current_user.following -= [params[:id].to_i]
+        current_user.save
+        redirect_to user_path(id: params[:id])
+    end
 end
