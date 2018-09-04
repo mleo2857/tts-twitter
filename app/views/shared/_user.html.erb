@@ -24,16 +24,20 @@
         <% if current_user == user %>
               <%= form_for message do |form| %>
                 <%= form.text_area :body %>
-                <%= form.submit "Tweet it!", class: "btn btn-primary" %>
+                <%= form.submit "Tweet it!", class: "btn btn-primary", id: "tweet-button" %>
           <% end %>
         <% end %>
         
         <% @messages.each do |message| %>
-        <div class="message">
+        <div class="message" id="message-<%= message.id %>">
             <%= render "shared/avatar", user: message.user, width: "50px" %>
             <p><%= message.body %></p>
             <br>
-            <p class="message-date"><%= time_ago_in_words(message.created_at) %></p>
+            <p class="message-date text-right"><%= time_ago_in_words(message.created_at) %> ago
+            <% if message.user == current_user %>
+                <i class="fas fa-trash-alt" onClick="deleteTweet(<%= message.id %>)"></i>
+            <% end %>  
+            </p>
         </div>
     
         <% end %>
